@@ -25,8 +25,8 @@ public class ClientController {
 
   @GetMapping
   public ResponseEntity<?> get() {
-    MarketClientSetting setting = new MarketClientSetting("https://sv-01.rikkeisys.com/redmine",
-        "Basic bGFubnQ6QWJjMTIzNDVAcms=");
+    MarketClientSetting setting = new MarketClientSetting("",
+        "");
     BittrexMarketClient client = new BittrexMarketClient(setting);
     return ResponseEntity.ok().body(client.get("issues.json", Issue.builder().projectId(4).build()));
   }

@@ -53,4 +53,4 @@ config/*.xml
 *.db
 
 # excel
-./*.xlsx
+/*.xlsx
