@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @Builder
 @AllArgsConstructor
-public class MarketClientSetting {
+public class RedmineClientSetting {
 
   private String baseUrl;
 

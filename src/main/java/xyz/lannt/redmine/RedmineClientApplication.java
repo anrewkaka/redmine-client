@@ -6,10 +6,10 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @SpringBootApplication
 @EnableConfigurationProperties
-public class ControlSheetApiApplication {
+public class RedmineClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ControlSheetApiApplication.class, args);
+        SpringApplication.run(RedmineClientApplication.class, args);
     }
 
 }

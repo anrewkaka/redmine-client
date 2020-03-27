@@ -36,6 +36,8 @@ public class IssueExcelConverter {
       while (iterator.hasNext()) {
         issues.add(rowToIssue(iterator.next(), setting));
       }
+
+      workbook.close();
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {

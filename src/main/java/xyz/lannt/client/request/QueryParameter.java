@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.springframework.util.ObjectUtils;
 
-import xyz.lannt.client.exception.MarketClientException;
+import xyz.lannt.client.exception.RedmineClientException;
 
 public interface QueryParameter {
 
@@ -52,7 +52,7 @@ public interface QueryParameter {
     try {
       fieldData = field.get(this);
     } catch (IllegalArgumentException | IllegalAccessException e) {
-      throw new MarketClientException(e);
+      throw new RedmineClientException(e);
     }
     if (fieldData == null) {
       return null;

@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
-import xyz.lannt.client.BittrexMarketClient;
+import xyz.lannt.client.RedmineClient;
 import xyz.lannt.client.request.issue.Issue;
 
 @AllArgsConstructor
@@ -24,7 +24,7 @@ public class Issues {
     this.values.add(issue);
   }
 
-  public void save(BittrexMarketClient client) {
+  public void save(RedmineClient client) {
     this.values.stream().forEach(e -> {
       client.post("issue.json", e);
     });

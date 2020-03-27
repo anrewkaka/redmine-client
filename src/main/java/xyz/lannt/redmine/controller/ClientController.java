@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import xyz.lannt.client.BittrexMarketClient;
-import xyz.lannt.client.MarketClientSetting;
+import xyz.lannt.client.RedmineClient;
+import xyz.lannt.client.RedmineClientSetting;
 import xyz.lannt.client.request.issue.Issue;
 import xyz.lannt.redmine.converter.TeecoinConverterSetting;
 import xyz.lannt.redmine.service.ExcelService;
@@ -25,9 +25,9 @@ public class ClientController {
 
   @GetMapping
   public ResponseEntity<?> get() {
-    MarketClientSetting setting = new MarketClientSetting("",
-        "");
-    BittrexMarketClient client = new BittrexMarketClient(setting);
+    RedmineClientSetting setting = new RedmineClientSetting("https://sv-01.rikkeisys.com/redmine",
+        "Basic bGFubnQ6QWJjMTIzNDVAcms=");
+    RedmineClient client = new RedmineClient(setting);
     return ResponseEntity.ok().body(client.get("issues.json", Issue.builder().projectId(4).build()));
   }
 

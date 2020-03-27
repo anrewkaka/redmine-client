@@ -12,16 +12,16 @@ import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
 
-import xyz.lannt.client.exception.MarketClientException;
+import xyz.lannt.client.exception.RedmineClientException;
 import xyz.lannt.client.request.QueryParameter;
 import xyz.lannt.client.request.RequestBody;
 import xyz.lannt.client.request.issue.Issue;
 
-public class BittrexMarketClient {
+public class RedmineClient {
 
-  private MarketClientSetting setting;
+  private RedmineClientSetting setting;
 
-  public BittrexMarketClient(MarketClientSetting setting) {
+  public RedmineClient(RedmineClientSetting setting) {
     this.setting = setting;
   }
 
@@ -43,7 +43,7 @@ public class BittrexMarketClient {
         url += "?" + request.toQueryParam();
       }
     } catch (IllegalAccessException e) {
-      throw new MarketClientException(e);
+      throw new RedmineClientException(e);
     }
 
     return url;
@@ -70,7 +70,7 @@ public class BittrexMarketClient {
     }
     ResponseEntity<String> response = restTemplate.exchange(url, method, requestEntity, String.class);
     if (response.getStatusCode() != HttpStatus.OK) {
-      throw new MarketClientException();
+      throw new RedmineClientException();
     }
 
     return response.getBody();
